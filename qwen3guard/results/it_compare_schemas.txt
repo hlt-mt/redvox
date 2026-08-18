@@ -1,0 +1,304 @@
+
+Loaded 50 samples from /home/wafa/PycharmProjects/SpeechSafetyTaxonomy/inference/outputs/it.jsonl
+============================================================
+LABEL DISTRIBUTIONS (raw, before normalization)
+============================================================
+
+  Safety/Fairness (50 non-empty):
+    'safe/fair'                       29
+    'unsafe/unfair'                   14
+    'controversial'                    7
+
+  qwen3guard_0.6B_Safety (50 non-empty):
+    'Safe'                            37
+    'Unsafe'                          12
+    'Controversial'                    1
+
+  qwen3guard_4B_Safety (50 non-empty):
+    'Safe'                            35
+    'Unsafe'                          14
+    'Controversial'                    1
+
+  qwen3guard_8B_Safety (50 non-empty):
+    'Safe'                            34
+    'Unsafe'                          13
+    'Controversial'                    3
+
+  Refusal (50 non-empty):
+    'no'                              27
+    'yes'                             23
+
+  qwen3guard_0.6B_Refusal (50 non-empty):
+    'No'                              39
+    'Yes'                             11
+
+  qwen3guard_4B_Refusal (50 non-empty):
+    'No'                              39
+    'Yes'                             11
+
+  qwen3guard_8B_Refusal (50 non-empty):
+    'No'                              39
+    'Yes'                             11
+
+============================================================
+NORMALIZATION MAPPING
+============================================================
+
+  Safety/Fairness (manual → normalized):
+    'safe/fair'               → 'Safe'
+    'unsafe/unfair'           → 'Unsafe'
+    'controversial'           → 'Controversial'
+
+  Schemas applied after normalization:
+    Soft: no merging (3 labels kept as-is)
+    Hard_loose: Safe → Safe/Controversial, Controversial → Safe/Controversial
+    Hard_strict: Controversial → Controversial/Unsafe, Unsafe → Controversial/Unsafe
+
+  Refusal: no normalization needed — labels already match after lowercasing.
+
+============================================================
+Qwen3Guard-Gen-0.6B  [Soft]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+               precision    recall  f1-score   support
+
+Controversial      0.000     0.000     0.000         7
+         Safe      0.730     0.931     0.818        29
+       Unsafe      0.667     0.571     0.615        14
+
+     accuracy                          0.700        50
+    macro avg      0.465     0.501     0.478        50
+ weighted avg      0.610     0.700     0.647        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.692     1.000     0.818        27
+         yes      1.000     0.478     0.647        23
+
+    accuracy                          0.760        50
+   macro avg      0.846     0.739     0.733        50
+weighted avg      0.834     0.760     0.739        50
+
+
+============================================================
+Qwen3Guard-Gen-4B  [Soft]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+               precision    recall  f1-score   support
+
+Controversial      0.000     0.000     0.000         7
+         Safe      0.743     0.897     0.812        29
+       Unsafe      0.571     0.571     0.571        14
+
+     accuracy                          0.680        50
+    macro avg      0.438     0.489     0.461        50
+ weighted avg      0.591     0.680     0.631        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.667     0.963     0.788        27
+         yes      0.909     0.435     0.588        23
+
+    accuracy                          0.720        50
+   macro avg      0.788     0.699     0.688        50
+weighted avg      0.778     0.720     0.696        50
+
+
+============================================================
+Qwen3Guard-Gen-8B  [Soft]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+               precision    recall  f1-score   support
+
+Controversial      0.333     0.143     0.200         7
+         Safe      0.735     0.862     0.794        29
+       Unsafe      0.615     0.571     0.593        14
+
+     accuracy                          0.680        50
+    macro avg      0.561     0.525     0.529        50
+ weighted avg      0.645     0.680     0.654        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.667     0.963     0.788        27
+         yes      0.909     0.435     0.588        23
+
+    accuracy                          0.720        50
+   macro avg      0.788     0.699     0.688        50
+weighted avg      0.778     0.720     0.696        50
+
+
+============================================================
+Qwen3Guard-Gen-0.6B  [Hard_loose]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+                    precision    recall  f1-score   support
+
+Safe/Controversial      0.842     0.889     0.865        36
+            Unsafe      0.667     0.571     0.615        14
+
+          accuracy                          0.800        50
+         macro avg      0.754     0.730     0.740        50
+      weighted avg      0.793     0.800     0.795        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.692     1.000     0.818        27
+         yes      1.000     0.478     0.647        23
+
+    accuracy                          0.760        50
+   macro avg      0.846     0.739     0.733        50
+weighted avg      0.834     0.760     0.739        50
+
+
+============================================================
+Qwen3Guard-Gen-4B  [Hard_loose]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+                    precision    recall  f1-score   support
+
+Safe/Controversial      0.833     0.833     0.833        36
+            Unsafe      0.571     0.571     0.571        14
+
+          accuracy                          0.760        50
+         macro avg      0.702     0.702     0.702        50
+      weighted avg      0.760     0.760     0.760        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.667     0.963     0.788        27
+         yes      0.909     0.435     0.588        23
+
+    accuracy                          0.720        50
+   macro avg      0.788     0.699     0.688        50
+weighted avg      0.778     0.720     0.696        50
+
+
+============================================================
+Qwen3Guard-Gen-8B  [Hard_loose]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+                    precision    recall  f1-score   support
+
+Safe/Controversial      0.838     0.861     0.849        36
+            Unsafe      0.615     0.571     0.593        14
+
+          accuracy                          0.780        50
+         macro avg      0.727     0.716     0.721        50
+      weighted avg      0.776     0.780     0.777        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.667     0.963     0.788        27
+         yes      0.909     0.435     0.588        23
+
+    accuracy                          0.720        50
+   macro avg      0.788     0.699     0.688        50
+weighted avg      0.778     0.720     0.696        50
+
+
+============================================================
+Qwen3Guard-Gen-0.6B  [Hard_strict]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+                      precision    recall  f1-score   support
+
+Controversial/Unsafe      0.846     0.524     0.647        21
+                Safe      0.730     0.931     0.818        29
+
+            accuracy                          0.760        50
+           macro avg      0.788     0.727     0.733        50
+        weighted avg      0.779     0.760     0.746        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.692     1.000     0.818        27
+         yes      1.000     0.478     0.647        23
+
+    accuracy                          0.760        50
+   macro avg      0.846     0.739     0.733        50
+weighted avg      0.834     0.760     0.739        50
+
+
+============================================================
+Qwen3Guard-Gen-4B  [Hard_strict]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+                      precision    recall  f1-score   support
+
+Controversial/Unsafe      0.800     0.571     0.667        21
+                Safe      0.743     0.897     0.812        29
+
+            accuracy                          0.760        50
+           macro avg      0.771     0.734     0.740        50
+        weighted avg      0.767     0.760     0.751        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.667     0.963     0.788        27
+         yes      0.909     0.435     0.588        23
+
+    accuracy                          0.720        50
+   macro avg      0.788     0.699     0.688        50
+weighted avg      0.778     0.720     0.696        50
+
+
+============================================================
+Qwen3Guard-Gen-8B  [Hard_strict]  (50 samples evaluated)
+============================================================
+
+--- Safety/Fairness ---
+                      precision    recall  f1-score   support
+
+Controversial/Unsafe      0.750     0.571     0.649        21
+                Safe      0.735     0.862     0.794        29
+
+            accuracy                          0.740        50
+           macro avg      0.743     0.717     0.721        50
+        weighted avg      0.741     0.740     0.733        50
+
+--- Refusal ---
+              precision    recall  f1-score   support
+
+          no      0.667     0.963     0.788        27
+         yes      0.909     0.435     0.588        23
+
+    accuracy                          0.720        50
+   macro avg      0.788     0.699     0.688        50
+weighted avg      0.778     0.720     0.696        50
+
+
+============================================================
+SUMMARY — model size × schema comparison
+============================================================
+
+  Schema        Size       Safety F1  Safety Acc   Refusal F1   Refusal Acc
+  ------------  --------  ----------  ----------  -----------  ------------
+  Soft          0.6B           0.478       0.700        0.733         0.760
+  Soft          4B             0.461       0.680        0.688         0.720
+  Soft          8B             0.529       0.680        0.688         0.720
+
+  Hard_loose    0.6B           0.740       0.800        0.733         0.760
+  Hard_loose    4B             0.702       0.760        0.688         0.720
+  Hard_loose    8B             0.721       0.780        0.688         0.720
+
+  Hard_strict   0.6B           0.733       0.760        0.733         0.760
+  Hard_strict   4B             0.740       0.760        0.688         0.720
+  Hard_strict   8B             0.721       0.740        0.688         0.720
+
