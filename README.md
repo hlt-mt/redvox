@@ -1,7 +1,7 @@
 # RedVox
 
 <p align="center">
-<img src="[def]" width="350"/>
+<img src="https://github.com/hlt-mt/redvox/blob/main/artifacts/logo.png?raw=true" width="350"/>
 </p>
 
 This repository contains the **code, model outputs, and evaluation resources** for the paper:
@@ -126,6 +126,3 @@ If you use RedVox, its evaluation resources, or the accompanying code in your re
 The code is released under the Apache 2.0 license (see [`LICENSE`](LICENSE)).
 
 The RedVox dataset is distributed separately. Please refer to the [dataset card](https://huggingface.co/datasets/hlt-mt/RedVox) for its licensing and usage terms.
-
-
-[def]: workspaces/redvox/artifacts/logo.png?raw=tru
